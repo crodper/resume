@@ -1,0 +1,75 @@
+basics:
+  name: "Carlos Rodríguez Peralta"
+  title: "Embedded Software Engineer"
+  location: 
+    countryCode: "es"
+    city: Málaga
+    region: Spain
+    
+  email: "carlosrodriguezperalta@gmail.com"
+  phone: "+34 620227253"
+  github: "github.com/crodper"
+  label: "this is the supposed label"
+  summary: "Embedded engineer with 5+ years of experience in C, Python and Linux-based systems. Strong background in ESP32, STM32 and IoT architectures."
+
+
+
+experience:
+  - company: Climate Control Systems
+    role: Embedded Engineer
+    start: 2021
+    end: Present
+    bullets:
+      - Firmware development in C for ESP32 and STM32
+      - Linux-based HVAC control systems
+      - IoT communication with cloud services
+
+skills:
+  - name: "Programming"
+    keywords: ["C", "Python", "Rust", "Lua"]
+  - name: "Embedded"
+    keywords: ["ESP32", "STM32", "RTOS"]
+
+languages:
+  - language: "Spanish"
+    fluency: "Native Speaker"
+  - language: "English"
+    fluency: "Fluent"
+  
+
+work:
+  - name: "Metadata SL"
+    position: "Embedded Engineer"
+    url: "https://companya.com"
+    startDate: "2020-01"
+    endDate: "2023-06"
+    summary: "Worked on IoT and embedded systems."
+    highlights:
+      - "Designed modular firmware for ESP32"
+      - "Integrated MQTT with cloud services"
+
+education:
+  - institution: "University X"
+    url: "https://universityx.edu"
+    studyType: "Bachelor"
+    area: "Computer Engineering"
+    startDate: "2015-09"
+    endDate: "2019-06"
+    score: "9.0/10"
+
+projects:
+  - name: "IoT Sensor Hub"
+    url: "https://github.com/username/sensor-hub"
+    keywords: ["Python", "ESP32"]
+    description: "A modular IoT sensor hub."
+    highlights:
+      - "Collected data via MQTT"
+      - "Stored results on local SQLite DB"
+
+certificates: 
+  - issuer: "Cambridge"
+    url: "google.com"
+    name: "B2"
+
+publications: []
+

@@ -1,0 +1,214 @@
+%-------------------------
+% Rezume - Jinja2 version
+%-------------------------
+
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{verbatim}
+\usepackage{titlesec}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{latexsym}
+\usepackage{marvosym}
+\usepackage[empty]{fullpage}
+\usepackage[hidelinks]{hyperref}
+\usepackage[normalem]{ulem}
+\usepackage[english]{babel}
+
+\usepackage[default]{sourcesanspro}
+\urlstyle{same}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0in}
+\renewcommand{\footrulewidth}{0in}
+
+\setlength{\tabcolsep}{0in}
+\setlength{\footskip}{12pt} % or some value > 3.6pt
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\textheight}{1.0in}
+
+\raggedbottom
+\raggedright
+
+\titleformat{\section}
+  {\scshape\large}{}
+  {0em}{\color{blue}}[\color{black}\titlerule\vspace{0pt}]
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand{\ULdepth}{2pt}
+
+% -------- Custom commands --------
+
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[rightmargin=0.11in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+
+\newcommand{\resumeSectionType}[3]{
+  \item\begin{tabular*}{0.96\textwidth}[t]{
+    p{0.15\linewidth}p{0.02\linewidth}p{0.81\linewidth}
+  }
+    \textbf{#1} & #2 & #3
+  \end{tabular*}\vspace{-2pt}
+}
+
+\newcommand{\resumeTrioHeading}[3]{
+  \item\small{
+    \begin{tabular*}{0.96\textwidth}[t]{
+      l@{\extracolsep{\fill}}c@{\extracolsep{\fill}}r
+    }
+      \textbf{#1} & \textit{#2} & #3
+    \end{tabular*}
+  }
+}
+
+\newcommand{\resumeQuadHeading}[4]{
+  \item
+  \begin{tabular*}{0.96\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small#3} & \textit{\small #4} \\
+  \end{tabular*}
+}
+
+\newcommand{\resumeHeadingListStart}{
+  \begin{itemize}[leftmargin=0.15in, label={}]
+}
+\newcommand{\resumeHeadingListEnd}{\end{itemize}}
+
+% ------------------ DOCUMENT ------------------
+
+\begin{document}
+
+% ---------- CONTACT ----------
+
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\Huge {{ basics.name }} \vspace{2pt}} &
+  {{ basics.location.city }}, {{ basics.location.region }},
+  {{ iso_country_name(basics.location.countryCode, "en") }} \\
+
+  {{ latex("href", basics.url, latex("uline", "Website")) | safe }}
+  {% if basics.profiles %}$|${% endif %}
+  {% for p in basics.profiles %}
+    {{ latex("href", p.url, latex("uline", p.network)) | safe }}
+    {% if not loop.last %}$|${% endif %}
+  {% endfor %}
+  &
+  {{ latex("href", "mailto:" ~ basics.email, latex("uline", basics.email)) | safe }} $|$
+  {{ latex("href", "tel:" ~ basics.phone, latex("uline", format_phone(basics.phone))) | safe }} \\
+\end{tabular*}
+
+% ---------- SUMMARY ----------
+
+\section{ {{ basics.label }} }
+\small{ {{ basics.summary }} }
+
+% ---------- SKILLS ----------
+
+{% if skills %}
+\section{Skills}
+\resumeHeadingListStart
+{% for s in skills %}
+  \resumeSectionType{ {{ s.name }} }{:}{ {{ join_array(", ", s.keywords) }} }
+{% endfor %}
+
+{% if languages %}
+  \resumeSectionType{Languages}{:}{
+    {% for l in languages %}
+      {{ l.language }} ({{ l.fluency }}){% if not loop.last %}, {% endif %}
+    {% endfor %}
+  }
+{% endif %}
+\resumeHeadingListEnd
+{% endif %}
+
+% ---------- EXPERIENCE ----------
+
+{% if work %}
+\section{Experience}
+\resumeHeadingListStart
+{% for w in work %}
+  \resumeQuadHeading
+    { {{ w.position }} }
+    { {{ format_month("en", w.startDate) }} -- {{ format_month("en", w.endDate) if w.endDate else "Present" }} }
+    { {{ latex("href", w.url, w.name) | safe }} }
+    { {{ w.summary }} }
+
+  {% if w.highlights %}
+  \resumeItemListStart
+    {% for h in w.highlights %}
+    \resumeItem{ {{ h }} }
+    {% endfor %}
+  \resumeItemListEnd
+  {% endif %}
+{% endfor %}
+\resumeHeadingListEnd
+{% endif %}
+
+% ---------- EDUCATION ----------
+
+{% if education %}
+\section{Education}
+\resumeHeadingListStart
+{% for e in education %}
+  \resumeQuadHeading
+    { {{ e.institution }} }
+    { {{ latex("href", e.url, "Website") | safe }} }
+    { {{ e.studyType }} of {{ e.area }}{% if e.score %}. {{ e.score }}{% endif %} }
+    { {{ format_month("en", e.startDate) }} -- {{ format_month("en", e.endDate) if e.endDate else "Present" }} }
+{% endfor %}
+\resumeHeadingListEnd
+{% endif %}
+
+% ---------- CERTIFICATES ----------
+
+{% if certificates %}
+\section{Certificates}
+\resumeHeadingListStart
+{% for c in certificates %}
+  \resumeQuadHeading
+    { {{ c.issuer }} }
+    { {{ latex("href", c.url, "Certificate") | safe }} }
+    { {{ c.name }} }
+    { {{ format_month("en", c.date) }} }
+{% endfor %}
+\resumeHeadingListEnd
+{% endif %}
+
+% ---------- PROJECTS ----------
+
+{% if projects %}
+\section{Open Source Projects}
+\resumeHeadingListStart
+{% for p in projects %}
+  \resumeTrioHeading
+    { {{ p.name }} }
+    { {{ join_array(", ", p.keywords) }} }
+{ {{ latex("href", p.url, "\\uline{Source Code}") | safe }} }
+
+  \resumeItemListStart
+    \resumeItem{ {{ p.description }} }
+    {% for h in p.highlights %}
+    \resumeItem{ {{ h }} }
+    {% endfor %}
+  \resumeItemListEnd
+{% endfor %}
+\resumeHeadingListEnd
+{% endif %}
+
+% ---------- PUBLICATIONS ----------
+
+{% if publications %}
+\section{Publications}
+\resumeItemListStart
+{% for pub in publications %}
+  \resumeItem{ {{ cite(pub) }} }
+{% endfor %}
+\resumeItemListEnd
+{% endif %}
+
+\end{document}
