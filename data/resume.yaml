@@ -7,11 +7,10 @@ basics:
     region: Spain
     
   email: "carlosrodriguezperalta@gmail.com"
-  phone: "+34 620227253"
+  phone: "+34620227253"
   github: "github.com/crodper"
   label: "this is the supposed label"
-  summary: "Embedded engineer with 5+ years of experience in C, Python and Linux-based systems. Strong background in ESP32, STM32 and IoT architectures."
-
+  summary: "Senior Embedded Engineer with over 5 years of experience leading the design and development of firmware for Linux-based and microcontroller systems. Strong expertise in C and Python, with deep knowledge of ESP32, STM32, and IoT architectures. Proven track record in technical decision-making, architecture definition, and end-to-end firmware delivery, with a solid focus on reliability, maintainability, and hardware–software integration."
 
 
 experience:
@@ -26,9 +25,9 @@ experience:
 
 skills:
   - name: "Programming"
-    keywords: ["C", "Python", "Rust", "Lua"]
+    keywords: ["C", "Python", "Rust"]
   - name: "Embedded"
-    keywords: ["ESP32", "STM32", "RTOS"]
+    keywords: ["ESP32", "STM32", "IDF", "ZIGBEE", "IOT", "CI/CD", "ZephyrOS"]
 
 languages:
   - language: "Spanish"
@@ -39,23 +38,63 @@ languages:
 
 work:
   - name: "Metadata SL"
-    position: "Embedded Engineer"
-    url: "https://companya.com"
-    startDate: "2020-01"
-    endDate: "2023-06"
+    position: "Head of Electronics Department"
+    url: "https://www.metacontratas.com/metacard/"
+    startDate: "2021-07"
+    endDate: "2023-11"
     summary: "Worked on IoT and embedded systems."
     highlights:
-      - "Designed modular firmware for ESP32"
-      - "Integrated MQTT with cloud services"
+      - "Managing and leading the department staff for the I+D projects"
+      - "Developing and implementing processes in the production line to ensure the quality requirements."
+      - "Java Backend development for firmware integration in Web Applications"
+      - "Collaboration with external partners, such as vendors or suppliers, to source equipment or materials needed for projects"
 
+  - name: "Metadata SL"
+    position: "Firmware Engineer"
+    url: "https://www.metacontratas.com/metacard/"
+    startDate: "2020-06"
+    endDate: "2021-07"
+    summary: "Worked on IoT and embedded systems."
+    highlights:
+      - "Firmware development in C language"
+      - "Bare-metal and ZephyrOS (Linux embedded distribution) programming for ESP and STM microcontrollers"
+      - "Focus on firmware design and development, including knowledge of firmware architectures, development tools and debugging techniques"
+
+  - name: "Metadata SL"
+    position: "Intership as Electronics Engineer"
+    url: "https://www.metacontratas.com/metacard/"
+    startDate: "2019-10"
+    endDate: "2020-06"
+    summary: "Worked on IoT and embedded systems."
+    highlights:
+      - "Taking part of the production line by understanding the product, both hardware andsoftware"
+      - "Industrial design and 3D modeling for improving existing products"
+      - "Drafting and review of documentation"
+      - "Testing and quality assurance of the hardware products"
+      
 education:
-  - institution: "University X"
-    url: "https://universityx.edu"
+  - institution: "Universidad de Málaga"
+    url: "https://www.uma.es/escuela-de-ingenierias-industriales/"
     studyType: "Bachelor"
-    area: "Computer Engineering"
+    area: "Industrial Engineering. Minor: Automation and Electronics"
     startDate: "2015-09"
     endDate: "2019-06"
-    score: "9.0/10"
+    score: "7.5/10"
+  - institution: "Politechnika Warszawska"
+    url: "https://www.pw.edu.pl/"
+    studyType: "Bachelor"
+    area: "Industrial Engineering. Erasmus Programme"
+    startDate: "2017-09"
+    endDate: "2018-06"
+    score: "9.3/10"
+  - institution: "Universidad de Málaga"
+    url: "https://www.uma.es/escuela-de-ingenierias-industriales/"
+    studyType: "Master"
+    area: "Industrial Engineering. Minor: Administration and Electronics"
+    startDate: "2019-09"
+    endDate: "2022-06"
+    score: "7.2/10"
+
 
 projects:
   - name: "IoT Sensor Hub"
