@@ -50,7 +50,7 @@ def main():
     template = env.get_template(Path(args.template).name)
     tex = template.render(**data)
 
-    tex_file = out_dir / "resume.tex"
+    tex_file = out_dir / "CarlosRodriguezPeralta_resume.tex"
     with open(tex_file, "w") as f:
         f.write(tex)
 
