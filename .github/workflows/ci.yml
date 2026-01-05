@@ -36,14 +36,26 @@ jobs:
           texlive-latex-recommended \
           texlive-latex-extra \
           texlive-fonts-extra \
-          latexmk
+          latexmk \
+          imagemagick
 
     - name: Build resume
       run: |
         python scripts/build_resume.py --data data/resume.yaml --template templates/resume.tex.j2 --out build/
+
+    - name: Convert PDF to PNG
+      run: |
+        cd build/
+        convert -density 300 CarlosRodriguezPeralta_resume.pdf -quality 100 CarlosRodriguezPeralta_resume.png
 
     - name: Upload PDF artifact
       uses: actions/upload-artifact@v4
       with:
         name: resume-pdf
         path: build/CarlosRodriguezPeralta_resume.pdf
+
+    - name: Upload PNG artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: resume-png
+        path: build/CarlosRodriguezPeralta_resume.png
