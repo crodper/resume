@@ -91,7 +91,9 @@
   {{ basics.location.city }}, {{ basics.location.region }},
   {{ iso_country_name(basics.location.countryCode, "en") }} \\
 
+  {% if basics.url %}
   {{ latex("href", basics.url, latex("uline", "Website")) | safe }}
+  {% endif %}
   {% if basics.profiles %}$|${% endif %}
   {% for p in basics.profiles %}
     {{ latex("href", p.url, latex("uline", p.network)) | safe }}
@@ -104,13 +106,13 @@
 
 % ---------- SUMMARY ----------
 
-\section{ {{ basics.label }} }
+\section{ {{ basics.label|upper }} }
 \small{ {{ basics.summary }} }
 
 % ---------- SKILLS ----------
 
 {% if skills %}
-\section{Skills}
+\section{\MakeUppercase{Skills}}
 \resumeHeadingListStart
 {% for s in skills %}
   \resumeSectionType{ {{ s.name }} }{:}{ {{ join_array(", ", s.keywords) }} }
@@ -129,7 +131,7 @@
 % ---------- EXPERIENCE ----------
 
 {% if work %}
-\section{Experience}
+\section{\MakeUppercase{Experience}}
 \resumeHeadingListStart
 {% for w in work %}
   \resumeQuadHeading
@@ -152,7 +154,7 @@
 % ---------- EDUCATION ----------
 
 {% if education %}
-\section{Education}
+\section{\MakeUppercase{Education}}
 \resumeHeadingListStart
 {% for e in education %}
   \resumeQuadHeading
@@ -167,7 +169,7 @@
 % ---------- CERTIFICATES ----------
 
 {% if certificates %}
-\section{Certificates}
+\section{\MakeUppercase{Certificates}}
 \resumeHeadingListStart
 {% for c in certificates %}
   \resumeQuadHeading
@@ -182,7 +184,7 @@
 % ---------- PROJECTS ----------
 
 {% if projects %}
-\section{Open Source Projects}
+\section{\MakeUppercase{Open Source Projects}}
 \resumeHeadingListStart
 {% for p in projects %}
   \resumeTrioHeading
@@ -203,7 +205,7 @@
 % ---------- PUBLICATIONS ----------
 
 {% if publications %}
-\section{Publications}
+\section{\MakeUppercase{Publications}}
 \resumeItemListStart
 {% for pub in publications %}
   \resumeItem{ {{ cite(pub) }} }
