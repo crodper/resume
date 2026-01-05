@@ -3,4 +3,4 @@ plugins:
   - "@semantic-release/release-notes-generator"
   - - "@semantic-release/github"
     - assets:
-        - path: build/**/*.{png,pdf}
+        - path: build/*.{png,pdf}
