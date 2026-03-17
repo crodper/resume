@@ -87,8 +87,8 @@
 % ---------- CONTACT ----------
 
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\Huge {{ basics.name }} \vspace{2pt}} &
-  {{ basics.location.city }}, {{ basics.location.region }},
+  \textbf{\Huge {{ escape_latex(basics.name) }} \vspace{2pt}} &
+  {{ escape_latex(basics.location.city) }}, {{ escape_latex(basics.location.region) }},
   {{ iso_country_name(basics.location.countryCode, "en") }} \\
 
   {% if basics.url %}
@@ -107,7 +107,7 @@
 % ---------- SUMMARY ----------
 
 \section{ {{ basics.label|upper }} }
-\small{ {{ basics.summary }} }
+\small{ {{ escape_latex(basics.summary) }} }
 
 % ---------- SKILLS ----------
 
@@ -115,13 +115,13 @@
 \section{\MakeUppercase{Skills}}
 \resumeHeadingListStart
 {% for s in skills %}
-  \resumeSectionType{ {{ s.name }} }{:}{ {{ join_array(", ", s.keywords) }} }
+  \resumeSectionType{ {{ escape_latex(s.name) }} }{:}{ {{ join_array(", ", s.keywords) }} }
 {% endfor %}
 
 {% if languages %}
   \resumeSectionType{Languages}{:}{
     {% for l in languages %}
-      {{ l.language }} ({{ l.fluency }}){% if not loop.last %}, {% endif %}
+      {{ escape_latex(l.language) }} ({{ escape_latex(l.fluency) }}){% if not loop.last %}, {% endif %}
     {% endfor %}
   }
 {% endif %}
@@ -135,15 +135,15 @@
 \resumeHeadingListStart
 {% for w in work %}
   \resumeQuadHeading
-    { {{ w.position }} }
+    { {{ escape_latex(w.position) }} }
     { {{ format_month("en", w.startDate) }} -- {{ format_month("en", w.endDate) if w.endDate else "Present" }} }
-    { {{ latex("href", w.url, w.name) | safe }} }
-    { {{ w.summary }} }
+    { {{ latex("href", w.url, escape_latex(w.name)) | safe }} }
+    { {{ escape_latex(w.summary) }} }
 
   {% if w.highlights %}
   \resumeItemListStart
     {% for h in w.highlights %}
-    \resumeItem{ {{ h }} }
+    \resumeItem{ {{ escape_latex(h) }} }
     {% endfor %}
   \resumeItemListEnd
   {% endif %}
@@ -158,9 +158,9 @@
 \resumeHeadingListStart
 {% for e in education %}
   \resumeQuadHeading
-    { {{ e.institution }} }
+    { {{ escape_latex(e.institution) }} }
     { {{ latex("href", e.url, "Website") | safe }} }
-    { {{ e.studyType }} of {{ e.area }}{% if e.score %}. {{ e.score }}{% endif %} }
+    { {{ escape_latex(e.studyType) }} of {{ escape_latex(e.area) }}{% if e.score %}. {{ escape_latex(e.score) }}{% endif %} }
     { {{ format_month("en", e.startDate) }} -- {{ format_month("en", e.endDate) if e.endDate else "Present" }} }
 {% endfor %}
 \resumeHeadingListEnd
@@ -173,9 +173,9 @@
 \resumeHeadingListStart
 {% for c in certificates %}
   \resumeQuadHeading
-    { {{ c.issuer }} }
+    { {{ escape_latex(c.issuer) }} }
     { {{ latex("href", c.url, "Certificate") | safe }} }
-    { {{ c.name }} }
+    { {{ escape_latex(c.name) }} }
     { {{ format_month("en", c.date) }} }
 {% endfor %}
 \resumeHeadingListEnd
@@ -188,14 +188,14 @@
 \resumeHeadingListStart
 {% for p in projects %}
   \resumeTrioHeading
-    { {{ p.name }} }
+    { {{ escape_latex(p.name) }} }
     { {{ join_array(", ", p.keywords) }} }
 { {{ latex("href", p.url, "\\uline{Source Code}") | safe }} }
 
   \resumeItemListStart
-    \resumeItem{ {{ p.description }} }
+    \resumeItem{ {{ escape_latex(p.description) }} }
     {% for h in p.highlights %}
-    \resumeItem{ {{ h }} }
+    \resumeItem{ {{ escape_latex(h) }} }
     {% endfor %}
   \resumeItemListEnd
 {% endfor %}
@@ -208,7 +208,7 @@
 \section{\MakeUppercase{Publications}}
 \resumeItemListStart
 {% for pub in publications %}
-  \resumeItem{ {{ cite(pub) }} }
+  \resumeItem{ {{ escape_latex(cite(pub)) }} }
 {% endfor %}
 \resumeItemListEnd
 {% endif %}

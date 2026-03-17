@@ -18,10 +18,31 @@ def latex(cmd: str, *args) -> str:
 
 
 
+def escape_latex(text: str) -> str:
+    """Escape LaTeX special characters in text."""
+    if not text:
+        return ""
+    escaped = str(text)
+    # Order matters: backslash must be escaped first
+    escaped = escaped.replace("\\", "\\textbackslash{}")
+    escaped = escaped.replace("&", "\\&")
+    escaped = escaped.replace("%", "\\%")
+    escaped = escaped.replace("$", "\\$")
+    escaped = escaped.replace("#", "\\#")
+    escaped = escaped.replace("_", "\\_")
+    escaped = escaped.replace("{", "\\{")
+    escaped = escaped.replace("}", "\\}")
+    escaped = escaped.replace("~", "\\textasciitilde{}")
+    escaped = escaped.replace("^", "\\textasciicircum{}")
+    return escaped
+
+
 def join_array(sep: str, items):
+    """Join array items with separator, escaping LaTeX special characters."""
     if not items:
         return ""
-    return sep.join(items)
+    escaped_items = [escape_latex(str(item)) for item in items]
+    return sep.join(escaped_items)
 
 
 def format_phone(phone: str) -> str:

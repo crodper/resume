@@ -14,6 +14,7 @@ from helpers import (
     format_month,
     cite,
     iso_country_name,
+    escape_latex,
 )
 
 
@@ -70,6 +71,7 @@ def main():
             "format_month": format_month,
             "cite": cite,
             "iso_country_name": iso_country_name,
+            "escape_latex": escape_latex,
         })
         print(f"✓ Template engine ready")
 
