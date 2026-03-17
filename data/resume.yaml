@@ -1,6 +1,6 @@
 meta:
   title: Carlos Rodriguez's Resume
-  version: v1.0.0
+  version: v1.1.0
   lastModified: 05-01-2026
 basics:
   name: "Carlos Rodríguez Peralta"
@@ -19,20 +19,16 @@ basics:
     Senior Firmware Architect with 5+ years leading embedded IoT systems 
     affecting 6000+ devices in production globally. Expert in FreeRTOS, 
     ESP32, STM32, and Embedded Linux with proven track record architecting 
-    scalable firmware solutions, mentoring engineering teams, and delivering 
-    99.8% reliable cloud-connected products.
+    scalable firmware solutions, and mentoring engineering teams.
     
     Leadership expertise: Managed 4+ firmware engineers plus offshore teams 
     (India subcontract), establishing architecture standards, code review 
-    processes, and technical mentorship programs that reduced critical bugs 
-    by 60%.
+    processes, and technical mentorship programs.
     
     Technical specialization: Real-time embedded systems, IoT protocols 
     (MQTT, BLE, WebSocket), OTA updates, hardware-software integration, 
     and agile firmware development.
     
-    #FirmwareEngineer #IoT #EmbeddedSystems #FreeRTOS #Leadership 
-    #TeamLead #EmbeddedLinux
 
 
 experience:
@@ -50,9 +46,8 @@ skills:
     keywords:
       - FreeRTOS (task scheduling, interrupt handling, queue management, mutex synchronization)
       - ZephyrOS (device trees, drivers, build system, HAL)
-      - Embedded Linux (kernel modules, device drivers, yocto, buildroot)
+      - Embedded Linux (kernel modules, device drivers)
       - RTOS Architecture (real-time systems, deterministic scheduling, memory management)
-      - ARM Cortex-M (M4, M7 microcontroller families, ARM Thumb instruction set)
       - Hardware Abstraction Layer (HAL) design
       - Bare-metal firmware development
   - name: Programming Languages & Frameworks
@@ -62,22 +57,21 @@ skills:
       - Embedded C best practices (MISRA-C compliance)
   - name: Communication Protocols
     keywords:
-      - Wireless (BLE/Bluetooth Low Energy, WiFi 802.11, Thread mesh)
+      - Wireless (BLE/Bluetooth Low Energy, WiFi 802.11)
       - Wired (I2C, SPI, UART, CAN bus, RS-485)
-      - IoT Protocols (MQTT, CoAP, WebSocket, HTTPS)
+      - IoT Protocols (MQTT, WebSocket, HTTPS, TLS/SSL)
       - Protocol Implementation & Stack Development
   - name: Debugging & Development Tools
     keywords:
       - Debuggers (GDB, OpenOCD, JTAG, SEGGER J-Link)
-      - IDEs (VSCode, Eclipse, IAR Embedded Workbench, STM32CubeIDE, STM32CubeMX)
-      - Build Systems (CMake, Make, Autotools, SCons)
+      - IDEs (VSCode, IAR Embedded Workbench, STM32CubeIDE, STM32CubeMX)
+      - Build Systems (CMake, Make)
       - Version Control (Git, GitHub, GitLab, branching strategies, code review)
   - name: IoT & Cloud Integration
     keywords:
-      - AWS IoT Core (MQTT, Device Shadows, Rules Engine, DynamoDB)
       - MQTT Brokers (Mosquitto, RabbitMQ, AWS IoT)
-      - Cloud Architecture (edge computing, API design, REST, WebSocket)
-      - OTA (Over-The-Air) Updates (firmware patching, delta updates, secure boot)
+      - Cloud Architecture ( API design, REST, WebSocket)
+      - OTA (Over-The-Air) Updates (firmware patching, delta updates, secure boot, flash encryption)
   - name: Software Engineering Practices
     keywords:
       - Agile/Scrum methodology
@@ -89,7 +83,6 @@ skills:
   - name: Operating Systems & Platforms
     keywords:
       - Linux (kernel internals, process management, memory management)
-      - Windows (drivers, system programming)
       - FreeRTOS
       - Real-time operating systems
 
@@ -108,45 +101,43 @@ work:
     endDate: "present"
     summary: "Leading firmware architecture and engineering team for production IoT HVAC control systems serving 6000+ devices globally."
     highlights:
-      - "Architected modular FreeRTOS firmware framework deployed across 6+ production IoT devices (Aidoo WiFi, AirQSensor WiFi, Consumer Meter WiFi, yolinux Linux-based systems), serving 6000+ active devices in residential and commercial settings with 99.8% reliability."
-      - "Led and mentored 2 junior firmware engineers in complete product development lifecycle including firmware design patterns, real-time debugging techniques, and architectural best practices - resulting in 40% reduction in critical field bugs and accelerated onboarding."
+      - "Architected modular FreeRTOS firmware framework deployed across 6+ production IoT devices (Aidoo WiFi, AirQSensor WiFi, Consumer Meter WiFi, etc.), serving 6000+ active devices in residential and commercial."
+      - "Led and mentored junior firmware engineers in complete product development lifecycle including firmware design patterns, real-time debugging techniques, and architectural best practices."
       - "Designed and implemented comprehensive IoT communication architecture supporting MQTT, BLE mesh networking, WebSocket secure connections, and OTA update system with delta compression - reducing update time by 70% and achieving 99.95% update success rate."
-      - "Drove protocol stack implementation (BLE, WiFi, cellular fallback) with low-power optimizations for edge computing, reducing power consumption by 25% and enabling offline-first operations for critical HVAC control functionality."
-      - "Developed automated test framework and quality assurance tools using Python, Git hooks, and CI/CD pipelines (GitHub Actions) to validate firmware before production - catching 95% of bugs before field deployment."
-      - "Redesigned cloud communication layer for yolinux embedded devices integrating REST APIs, MQTT brokers, and device-to-cloud telemetry streaming for real-time HVAC monitoring and remote management capabilities."
+      - "Drove protocol stack implementation (BLE, WiFi, cellular fallback)."
+      - "Developed automated test framework and quality assurance tools using Python, and CI/CD pipelines (Gitlab) to validate firmware before production."
+      - "Redesigned cloud communication layer for devices integrating device-to-cloud telemetry streaming for real-time HVAC monitoring and remote management capabilities."
   - name: "Metadata SL"
-    position: "Head of Electronics Department & Engineering Manager"
+    position: "Head of Firmware Department & Engineering Manager"
     url: "https://www.metacontratas.com/metacard/"
     startDate: "2021-07"
     endDate: "2023-11"
     summary: "Led R&D electronics department overseeing firmware development, hardware design, and production quality for 2 production IoT MetaCard devices."
     highlights:
-      - "Managed and led cross-functional electronics team of 4+ engineers plus offshore India subcontract team (8+ developers), establishing agile development processes, code review standards, and architecture review boards that reduced critical bugs by 60% and improved time-to-market by 35%."
-      - "Architected complete firmware redesign for 2 production MetaCard devices using ZephyrOS and ARM Cortex-M4 microcontrollers, including RTOS kernel configuration, device driver implementation, and interrupt handling - resulting in 2 devices shipped to production within 12 months."
+      - "Managed and led cross-functional electronics team of 4+ engineers plus offshore India subcontract team, establishing agile development processes, code review standards, and architecture review boards that reduced critical bugs by 60% and improved time-to-market by 35%."
+      - "Architected complete firmware redesign for 2 production MetaCard devices using ZephyrOS, including RTOS kernel configuration, device driver implementation, and interrupt handling - resulting in 2 devices shipped to production."
       - "Designed and implemented firmware-to-Java backend integration layer for IoT cloud connectivity, establishing REST APIs and MQTT protocols for real-time device telemetry, remote management, and OTA firmware updates across deployed devices."
-      - "Established R&D quality assurance framework implementing unit testing, integration testing, and hardware-in-the-loop validation using CMock testing framework - reducing field defects by 60% and improving firmware reliability metrics."
+      - "Established R&D quality assurance framework implementing unit testing, integration testing, and hardware-in-the-loop validation using CMock testing framework."
       - "Led vendor and supplier collaboration for electronics sourcing, component selection, and supply chain optimization, ensuring BOM cost reduction of 20% while maintaining performance specifications."
 
   - name: "Metadata SL"
     position: "Senior Firmware Engineer"
-    url: "https://www.metacontratas.com/metaccard/"
+    url: "https://www.metacontratas.com/metacard/"
     startDate: "2020-06"
     endDate: "2021-07"
     summary: "Developed and optimized firmware for MetaCard embedded systems using ZephyrOS, ESP32, and STM32 microcontrollers."
     highlights:
       - "Designed and implemented C firmware for IoT MetaCard devices supporting multiple sensor interfaces (I2C, SPI, UART) and wireless protocols (WiFi, BLE) with embedded Linux kernel module development."
-      - "Implemented ZephyrOS device tree bindings, custom drivers, and HAL layers for ARM Cortex-M microcontrollers, optimizing boot time and reducing firmware footprint by 30%."
+      - "Implemented ZephyrOS device tree bindings, custom drivers, and HAL layers for ARM Cortex-M microcontrollers."
       - "Profiled and debugged complex embedded systems using GDB, OpenOCD JTAG debugging, and hardware analyzers, reducing time-to-debug critical issues from 8 hours to 1 hour through systematic debugging methodology."
-      - "Contributed to 2 production devices shipped with firmware supporting offline operation, secure communication, and OTA update capability with 99.2% reliability in field."
 
   - name: "Metadata SL"
     position: "Electronics Engineering Intern"
-    url: "https://www.metacontratas.com/metaccard/"
+    url: "https://www.metacontratas.com/metacard/"
     startDate: "2019-10"
     endDate: "2020-06"
     summary: "Contributed to R&D validation and production quality for embedded IoT hardware products."
     highlights:
-      - "Participated in complete production lifecycle for MetaCard IoT devices including firmware testing on ESP32 and STM32 microcontrollers, hardware validation, and design optimization - contributing to 2 devices shipped within 8 months."
       - "Performed comprehensive hardware-in-the-loop testing and quality assurance, executing test plans and documenting issues using systematic debugging techniques and embedded system analysis tools."
       - "Supported 3D CAD modeling and industrial design optimization using SOLIDWORKS, improving thermal performance and mechanical robustness of existing PCB designs."
       - "Documented technical specifications, design decisions, and firmware implementation details, establishing foundation for future product maintenance and team knowledge transfer."
@@ -173,19 +164,13 @@ education:
     startDate: "2019-09"
     endDate: "2022-06"
     score: "7.2/10"
-#   - name: "IoT Sensor Hub"
-#     url: "https://github.com/username/sensor-hub"
-#     keywords: ["Python", "ESP32"]
-#     description: "A modular IoT sensor hub."
-#     highlights:
-#       - "Collected data via MQTT"
-#       - "Stored results on local SQLite DB"
+
 
 certificates:
   - issuer: "Cambridge English"
     url: "https://www.cambridgeenglish.org/qualifications/general-english/first/"
     name: "Cambridge English First Certificate (B2)"
-    date: "2018-05"
+    date: "2014-05"
 
 publications: []
 

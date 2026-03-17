@@ -317,6 +317,13 @@ Closes #42
 - Feature branches: `feature/description` (created from main)
 - Always create a commit before pushing
 
+### Git Push Policy ⚠️
+- **AGENTS MUST NOT PUSH COMMITS AUTOMATICALLY**
+- Agents should create commits locally when explicitly requested
+- Agents must show what they've done and ask for approval before pushing
+- Only push to remote (`git push`) after user explicitly approves
+- No exceptions - always wait for user confirmation before `git push`
+
 ---
 
 ## Key Files to Edit
