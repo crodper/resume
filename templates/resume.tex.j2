@@ -51,7 +51,7 @@
 
 \newcommand{\resumeSectionType}[3]{
   \item\begin{tabular*}{0.96\textwidth}[t]{
-    p{0.15\linewidth}p{0.02\linewidth}p{0.81\linewidth}
+    p{0.20\linewidth}p{0.02\linewidth}p{0.74\linewidth}
   }
     \textbf{#1} & #2 & #3
   \end{tabular*}\vspace{-2pt}
@@ -73,6 +73,15 @@
     \textbf{#1} & #2 \\
     \textit{\small#3} & \textit{\small #4} \\
   \end{tabular*}
+}
+
+\newcommand{\resumeQuadHeadingWithSummary}[4]{
+  \item
+  \begin{tabular*}{0.96\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small#3} & \textit{\small #4} \\
+  \end{tabular*}
+  \vspace{2pt}
 }
 
 \newcommand{\resumeHeadingListStart}{
@@ -134,11 +143,13 @@
 \section{\MakeUppercase{Experience}}
 \resumeHeadingListStart
 {% for w in work %}
-  \resumeQuadHeading
+  \resumeQuadHeadingWithSummary
     { {{ escape_latex(w.position) }} }
     { {{ format_month("en", w.startDate) }} -- {{ format_month("en", w.endDate) if w.endDate else "Present" }} }
     { {{ latex("href", w.url, escape_latex(w.name)) | safe }} }
-    { {{ escape_latex(w.summary) }} }
+    { }
+  
+  \resumeItem{ {{ escape_latex(w.summary) }} }
 
   {% if w.highlights %}
   \resumeItemListStart

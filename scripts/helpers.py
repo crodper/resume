@@ -50,8 +50,41 @@ def format_phone(phone: str) -> str:
 
 
 def format_month(lang: str, date: str) -> str:
-    # expects YYYY-MM or YYYY-MM-DD
-    return date
+    """Convert YYYY-MM or YYYY-MM-DD date format to readable month year.
+    
+    Args:
+        lang: Language code (e.g., 'en', 'es')
+        date: Date string in YYYY-MM or YYYY-MM-DD format
+    
+    Returns:
+        Formatted date string (e.g., 'Nov 2023' for English)
+    """
+    if not date or date == "present":
+        return "Present"
+    
+    months_en = {
+        "01": "Jan", "02": "Feb", "03": "Mar", "04": "Apr",
+        "05": "May", "06": "Jun", "07": "Jul", "08": "Aug",
+        "09": "Sep", "10": "Oct", "11": "Nov", "12": "Dec"
+    }
+    months_es = {
+        "01": "Ene", "02": "Feb", "03": "Mar", "04": "Abr",
+        "05": "May", "06": "Jun", "07": "Jul", "08": "Ago",
+        "09": "Sep", "10": "Oct", "11": "Nov", "12": "Dic"
+    }
+    
+    months = months_en if lang == "en" else months_es
+    
+    try:
+        # Extract YYYY-MM from YYYY-MM or YYYY-MM-DD
+        parts = date.split("-")
+        if len(parts) >= 2:
+            year = parts[0]
+            month = parts[1]
+            return f"{months.get(month, month)} {year}"
+        return date
+    except Exception:
+        return date
 
 
 def cite(pub: dict) -> str:
