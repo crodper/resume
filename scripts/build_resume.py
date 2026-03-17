@@ -106,7 +106,6 @@ def main():
             print("❌ pdflatex not found. Please install texlive-latex-base")
             raise
 
-<<<<<<< HEAD
         # Verify PDF was generated
         pdf_file = out_dir / "resume.pdf"
         if not pdf_file.exists():
@@ -117,11 +116,6 @@ def main():
     except Exception as e:
         print(f"❌ Error: {str(e)}", file=sys.stderr)
         sys.exit(1)
-=======
-    tex_file = out_dir / "CarlosRodriguezPeralta_resume.tex"
-    with open(tex_file, "w") as f:
-        f.write(tex)
->>>>>>> 02a238920cbaee8300356c7c756276fb87fe3b73
 
 
 if __name__ == "__main__":
