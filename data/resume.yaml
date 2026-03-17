@@ -1,16 +1,21 @@
+meta:
+  title: Carlos Rodriguez's Resume
+  version: v1.0.0
+  lastModified: 05-01-2026
 basics:
   name: "Carlos Rodríguez Peralta"
   title: "Embedded Software Engineer"
   location: 
     countryCode: "es"
     city: Málaga
-    region: Spain
+    region: Andalucia
     
-  email: "carlosrodriguezperalta@gmail.com"
+  email: "carlosrodriguezperalta+business@gmail.com"
   phone: "+34620227253"
   github: "github.com/crodper"
-  label: "this is the supposed label"
-  summary: "Senior Embedded Engineer with over 5 years of experience leading the design and development of firmware for Linux-based and microcontroller systems. Strong expertise in C and Python, with deep knowledge of ESP32, STM32, and IoT architectures. Proven track record in technical decision-making, architecture definition, and end-to-end firmware delivery, with a solid focus on reliability, maintainability, and hardware–software integration."
+  #url: "https://crodper.github.io"
+  label: "Firmware Engineer"
+  summary: "Senior Firmware Engineer with over 5 years of experience leading the design and development of firmware for Linux-based and microcontroller systems. Strong expertise in C and Python, with deep knowledge of ESP32, STM32, and IoT architectures. Proven track record in technical decision-making, architecture definition, and end-to-end firmware delivery, with a solid focus on reliability, maintainability, and hardware–software integration."
 
 
 experience:
@@ -24,10 +29,23 @@ experience:
       - IoT communication with cloud services
 
 skills:
-  - name: "Programming"
-    keywords: ["C", "Python", "Rust"]
-  - name: "Embedded"
-    keywords: ["ESP32", "STM32", "IDF", "ZIGBEE", "IOT", "CI/CD", "ZephyrOS"]
+  - name: Technical Skills
+    keywords:
+      - C (POSIX, OpenSSL, Make, CMake)
+      - Python (scripting, automation, data analysis)
+      - ZephyrOS (device trees, drivers, build system)
+  - name: Tools
+    keywords:
+      - GitHub (Actions, Issues, Projects)
+      - GitLab (Pipelines, Issues, Projects)
+      - Message brokers (MQTT - Mosquitto, rabbitMQ)
+      - Editors (Eclipse, IntelliJ IDEA, VSCode, IAR, stm32cubeIDE, stm32cubemx)
+      - Operating Systems (Linux, Win)
+  - name: Databases
+    keywords: [MySQL]
+  - name: Cloud
+    keywords:
+      - AWS
 
 languages:
   - language: "Spanish"
@@ -37,12 +55,25 @@ languages:
   
 
 work:
+  - name: "Corporacion Empresarial Altra (Airzone)"
+    position: "Firmware Architect"
+    url: "https://www.airzonecontrol.com/"
+    startDate: "2023-11"
+    endDate: "present"
+    summary: "Worked on IoT and embedded systems for microcontrollers and Linux-based systems."
+    highlights:
+      - "Designed the modular firmware architecture for all the entry-level product range, based on the ESP32 microcontroller (Aidoo Wifi, AirQSensor Wifi, Consumer Meter Wifi)."
+      - "Supervised and led juniors and mid-level engineers in the implementation of the designed architecture."
+      - "Focused on IoT communication protocols and cloud integration(websockets, BLE, OTA, CRA modifications)."
+      - "Ensured robust, scalable, and efficient firmware solutions tailored to specific project needs."
+      - "Design and develop a suite of tools to favor the development and to assure quality tests approval."
+      - "Redesign of the cloud communication for the yolinux embedded devices."
   - name: "Metadata SL"
     position: "Head of Electronics Department"
     url: "https://www.metacontratas.com/metacard/"
     startDate: "2021-07"
     endDate: "2023-11"
-    summary: "Worked on IoT and embedded systems."
+    summary: "Led the electronics department, managing I+D projects and firmware development for embedded systems."
     highlights:
       - "Managing and leading the department staff for the I+D projects"
       - "Developing and implementing processes in the production line to ensure the quality requirements."
@@ -54,7 +85,7 @@ work:
     url: "https://www.metacontratas.com/metacard/"
     startDate: "2020-06"
     endDate: "2021-07"
-    summary: "Worked on IoT and embedded systems."
+    summary: "Worked on embedded systems based in ZephyrOS"
     highlights:
       - "Firmware development in C language"
       - "Bare-metal and ZephyrOS (Linux embedded distribution) programming for ESP and STM microcontrollers"
@@ -65,9 +96,9 @@ work:
     url: "https://www.metacontratas.com/metacard/"
     startDate: "2019-10"
     endDate: "2020-06"
-    summary: "Worked on IoT and embedded systems."
+    summary: "Internship focused on hardware and firmware testing, industrial design, and quality assurance."
     highlights:
-      - "Taking part of the production line by understanding the product, both hardware andsoftware"
+      - "Taking part of the production line by understanding the product, both hardware and software"
       - "Industrial design and 3D modeling for improving existing products"
       - "Drafting and review of documentation"
       - "Testing and quality assurance of the hardware products"
@@ -96,14 +127,14 @@ education:
     score: "7.2/10"
 
 
-projects:
-  - name: "IoT Sensor Hub"
-    url: "https://github.com/username/sensor-hub"
-    keywords: ["Python", "ESP32"]
-    description: "A modular IoT sensor hub."
-    highlights:
-      - "Collected data via MQTT"
-      - "Stored results on local SQLite DB"
+# projects:
+#   - name: "IoT Sensor Hub"
+#     url: "https://github.com/username/sensor-hub"
+#     keywords: ["Python", "ESP32"]
+#     description: "A modular IoT sensor hub."
+#     highlights:
+#       - "Collected data via MQTT"
+#       - "Stored results on local SQLite DB"
 
 certificates: 
   - issuer: "Cambridge"
