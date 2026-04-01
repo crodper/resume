@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cmd.exe /c \"python --version && cmake --version\")",
+      "Bash(cmd.exe /c \"python --version\")",
+      "Bash(cmd.exe /c \"cmake --version\")",
+      "Bash(powershell.exe -Command \"python --version; cmake --version\")",
+      "Bash(powershell.exe -Command \"Get-Command python3,python,cmake -ErrorAction SilentlyContinue | Select-Object Name,Source\")",
+      "Read(//c/Users/carlo/anaconda3/**)",
+      "Read(//c/Users/carlo/miniconda3/**)",
+      "Bash(powershell.exe -Command \"Get-ChildItem -Path C:\\\\Users\\\\carlo -Recurse -Filter python.exe -ErrorAction SilentlyContinue | Where-Object { $_.FullName -notlike ''*WindowsApps*'' } | Select-Object FullName\")",
+      "Bash(where.exe cmake:*)",
+      "Bash(where.exe pdflatex:*)",
+      "Bash(where.exe pip:*)",
+      "Bash(where.exe winget:*)",
+      "Bash(where.exe choco:*)",
+      "Bash(winget install:*)"
+    ]
+  }
+}

@@ -124,15 +124,14 @@
 \section{\MakeUppercase{Skills}}
 \resumeHeadingListStart
 {% for s in skills %}
-  \resumeSectionType{ {{ escape_latex(s.name) }} }{:}{ {{ join_array(", ", s.keywords) }} }
+  \item\small{\textbf{ {{- escape_latex(s.name) -}} :} {{ join_array(" $\\cdot$ ", s.keywords) }} }\vspace{-2pt}
 {% endfor %}
-
 {% if languages %}
-  \resumeSectionType{Languages}{:}{
+  \item\small{\textbf{Languages:}
     {% for l in languages %}
-      {{ escape_latex(l.language) }} ({{ escape_latex(l.fluency) }}){% if not loop.last %}, {% endif %}
+      {{ escape_latex(l.language) }} ({{ escape_latex(l.fluency) }}){% if not loop.last %} $\cdot${% endif %}
     {% endfor %}
-  }
+  }\vspace{-2pt}
 {% endif %}
 \resumeHeadingListEnd
 {% endif %}
