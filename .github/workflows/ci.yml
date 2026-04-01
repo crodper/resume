@@ -14,10 +14,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
     - name: Set up Python 3.10
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.10'
 
@@ -50,6 +50,10 @@ jobs:
           exit 1
         fi
         ls -lh build/resume.pdf
+
+    - name: Fix ImageMagick PDF policy
+      run: |
+        sudo sed -i 's/rights="none" pattern="PDF"/rights="read|write" pattern="PDF"/' /etc/ImageMagick-6/policy.xml
 
     - name: Convert PDF to PNG
       run: |
